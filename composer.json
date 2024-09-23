@@ -2,8 +2,8 @@
     "name": "poman/test_drom",
     "autoload": {
         "psr-4": {
-            "Poman\\TestDrom\\Task1": "task_1/",
-            "Poman\\TestDrom\\Task2": "task_2/"
+            "Poman\\TestDrom\\Task1": "task1/",
+            "Poman\\TestDrom\\Task2": "task2/"
         }
     },
     "authors": [
