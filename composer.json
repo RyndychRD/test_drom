@@ -1,0 +1,16 @@
+{
+    "name": "poman/test_drom",
+    "autoload": {
+        "psr-4": {
+            "Poman\\TestDrom\\Task1": "task_1/",
+            "Poman\\TestDrom\\Task2": "task_2/"
+        }
+    },
+    "authors": [
+        {
+            "name": "RyndychRD",
+            "email": "r.roman1234@yandex.ru"
+        }
+    ],
+    "require": {}
+}
