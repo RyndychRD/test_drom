@@ -32,7 +32,8 @@ function getCount(float $expectedVal): void
 }
 
 
-$tests = [
+$testCases = [
+    [ 'dir' => 'notExist', 'expected' => 0 ],
     [ 'dir' => 'emptyDir', 'expected' => 0 ],
     [ 'dir' => 'noCount', 'expected' => 0 ],
     [ 'dir' => 'countInDirectory', 'expected' => 6 ],
@@ -43,7 +44,7 @@ $tests = [
     [ 'dir' => 'countHasWords', 'expected' => 157.34 ],
     [ 'dir' => 'countInCountDir', 'expected' => 123 ],
 ];
-foreach ($tests as $testCase) {
+foreach ($testCases as $testCase) {
     GetCountOptions::setStartDirectory(GetCountOptions::DEFAULT_DIR . $testCase['dir']);
     getCount($testCase['expected']);
     echo '</br>';
