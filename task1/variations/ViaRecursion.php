@@ -17,7 +17,7 @@ class ViaRecursion extends GetCount
             if (is_dir($path)) {
                 $this->calcCount($path);
             }
-            if ($currentDirFile === $this->filename) {
+            elseif ($currentDirFile === $this->filename) {
                 $this->incSumOfNumbersFromFile($path);
             }
 

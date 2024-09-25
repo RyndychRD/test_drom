@@ -41,6 +41,7 @@ $tests = [
     [ 'dir' => 'countHasFloats', 'expected' => 247.323 ],
     [ 'dir' => 'countHasNothing', 'expected' => 0 ],
     [ 'dir' => 'countHasWords', 'expected' => 157.34 ],
+    [ 'dir' => 'countInCountDir', 'expected' => 123 ],
 ];
 foreach ($tests as $testCase) {
     GetCountOptions::setStartDirectory(GetCountOptions::DEFAULT_DIR . $testCase['dir']);
