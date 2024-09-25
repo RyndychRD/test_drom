@@ -1,16 +1,18 @@
 {
-    "name": "poman/test_drom",
-    "autoload": {
-        "psr-4": {
-            "Poman\\TestDrom\\Task1": "task1/",
-            "Poman\\TestDrom\\Task2": "task2/"
-        }
-    },
-    "authors": [
-        {
-            "name": "RyndychRD",
-            "email": "r.roman1234@yandex.ru"
-        }
-    ],
-    "require": {}
+  "name": "poman/test_drom",
+  "autoload": {
+    "psr-4": {
+      "Poman\\TestDrom\\Task1\\": "task1/"
+    }
+  },
+  "scripts": {
+    "start": "docker-compose -f ./!docker/docker-compose.yaml -p test_drom up"
+  },
+  "authors": [
+    {
+      "name": "RyndychRD",
+      "email": "r.roman1234@yandex.ru"
+    }
+  ],
+  "require": {}
 }

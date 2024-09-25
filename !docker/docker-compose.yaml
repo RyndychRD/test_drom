@@ -37,21 +37,6 @@ services:
     networks:
       - service-network
 
-  db:
-    image: postgres:14.2
-    environment:
-      POSTGRES_DB: "processing"
-      POSTGRES_USER: "postgres"
-      POSTGRES_PASSWORD: "123456"
-    command: sh -c "docker-entrypoint.sh postgres && chown -R postgres:postgres /var/lib/postgresql/data && chmod 700 /var/lib/postgresql/data "
-    volumes:
-      - db-content:/var/lib/postgresql/data
-    ports:
-      - "5442:5432"
-    networks:
-      - service-network
-
-
 
 
 #Docker Networks
@@ -61,5 +46,3 @@ networks:
 
 volumes:
   phpsocket:
-  redis-data:
-  db-content:
