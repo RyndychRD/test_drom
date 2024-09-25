@@ -26,7 +26,7 @@ abstract class GetCountFactory
     {
         return match ($type) {
             'recursive' => new ViaRecursion(),
-            'visitor' => new ViaArray(),
+            'array' => new ViaArray(),
             'system' => new ViaSystem(),
             default => throw new Exception("Unsupported type: $type"),
         };
@@ -36,9 +36,9 @@ abstract class GetCountFactory
      * @return ViaArray
      * @throws Exception
      */
-    public static function getVisitorVariation(): ViaArray
+    public static function getArrayVariation(): ViaArray
     {
-        return self::create('visitor');
+        return self::create('array');
     }
 
     /**

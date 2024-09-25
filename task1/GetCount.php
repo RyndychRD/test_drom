@@ -13,6 +13,7 @@ abstract class GetCount implements GetCountInterface
     {
         $this->filename = GetCountOptions::getFilename();
         $this->startDir = GetCountOptions::getStartDirectory();
+
     }
 
     public function logResult(): void

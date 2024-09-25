@@ -10,7 +10,14 @@ class ViaSystem extends GetCount
 
     public function calcCount(): static
     {
-        $this->count = 2;
+        $command = "find $this->startDir -type f -name \"count\"";
+        $output = shell_exec($command);
+        $files = explode("\n", trim($output ?: ''));
+        foreach ($files as $file) {
+            if ($file) {
+                $this->incSumOfNumbersFromFile($file);
+            }
+        }
         return $this;
     }
 }

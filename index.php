@@ -13,6 +13,8 @@ function getCount(float $expectedVal): void
         GetCountOptions::logCurrentOptions();
         $variations = [
             GetCountFactory::getRecursiveVariation(),
+            GetCountFactory::getArrayVariation(),
+            GetCountFactory::getSystemVariation(),
         ];
         foreach ($variations as $variation) {
             /** @var GetCount $variation */
