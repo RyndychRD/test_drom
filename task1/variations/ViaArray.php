@@ -11,17 +11,17 @@ class ViaArray extends GetCount
     public function calcCount(): static
     {
         $currentDirFiles = $this->getListOfFiles($this->startDir);
-        $currentDirFilesWithPath = [];
-        foreach ($currentDirFiles as $currentDirFile) {
-            $currentDirFilesWithPath[] = $this->startDir . DIRECTORY_SEPARATOR . $currentDirFile;
+        foreach ($currentDirFiles as $key => $currentDirFile) {
+            $currentDirFiles[$key] = [ 'path' => $this->startDir . DIRECTORY_SEPARATOR . $currentDirFile, 'name' => $currentDirFile ];
         }
-        while (!empty($currentDirFilesWithPath)) {
-            $path = array_pop($currentDirFilesWithPath);
-            $name = substr($path, strrpos($path, DIRECTORY_SEPARATOR) + 1);
+        while (!empty($currentDirFiles)) {
+            $item = array_pop($currentDirFiles);
+            $path = $item['path'];
+            $name = $item['name'];
             if (is_dir($path)) {
                 $pathsToVisit = $this->getListOfFiles($path);
                 foreach ($pathsToVisit as $pathToVisit) {
-                    $currentDirFilesWithPath[] = $path . DIRECTORY_SEPARATOR . $pathToVisit;
+                    $currentDirFiles[] = [ 'path' => $path . DIRECTORY_SEPARATOR . $pathToVisit, 'name' => $pathToVisit ];
                 }
             }
             elseif ($name === $this->filename) {
