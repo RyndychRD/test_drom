@@ -14,14 +14,19 @@ class ViaArray extends GetCount
         foreach ($currentDirFiles as $key => $currentDirFile) {
             $currentDirFiles[$key] = [ 'path' => $this->startDir . DIRECTORY_SEPARATOR . $currentDirFile, 'name' => $currentDirFile ];
         }
-        while (!empty($currentDirFiles)) {
+        $newPaths = [];
+        while (!empty($currentDirFiles) || !empty($newPaths)) {
+            if (empty($currentDirFiles)) {
+                $currentDirFiles = $newPaths;
+                $newPaths = [];
+            }
             $item = array_pop($currentDirFiles);
             $path = $item['path'];
             $name = $item['name'];
             if (is_dir($path)) {
                 $pathsToVisit = $this->getListOfFiles($path);
                 foreach ($pathsToVisit as $pathToVisit) {
-                    $currentDirFiles[] = [ 'path' => $path . DIRECTORY_SEPARATOR . $pathToVisit, 'name' => $pathToVisit ];
+                    $newPaths[] = [ 'path' => $path . DIRECTORY_SEPARATOR . $pathToVisit, 'name' => $pathToVisit ];
                 }
             }
             elseif ($name === $this->filename) {
