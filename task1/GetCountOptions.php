@@ -46,11 +46,5 @@ abstract class GetCountOptions
         }
     }
 
-    public static function logCurrentOptions(): void
-    {
-        echo 'Filename: ' . self::$filename . '</br>';
-        echo 'Starting directory: ' . self::$startDirectory . '</br>';
-    }
-
 
 }

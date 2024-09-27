@@ -16,10 +16,6 @@ abstract class GetCount implements GetCountInterface
 
     }
 
-    public function logResult(): void
-    {
-        echo get_class($this) . ' answer: ' . $this->count . '</br>';
-    }
 
     public function getCount(): float
     {

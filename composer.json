@@ -5,8 +5,14 @@
       "Poman\\TestDrom\\Task1\\": "task1/"
     }
   },
+  "autoload-dev": {
+    "psr-4": {
+      "Poman\\TestDrom\\Test\\": "tests/"
+    }
+  },
   "scripts": {
-    "start": "docker-compose -f ./!docker/docker-compose.yaml -p test_drom up"
+    "start": "docker-compose -f ./!docker/docker-compose.yaml -p test_drom up",
+    "test": "./vendor/bin/phpunit --configuration phpunit.xml"
   },
   "authors": [
     {
@@ -14,5 +20,7 @@
       "email": "r.roman1234@yandex.ru"
     }
   ],
-  "require": {}
+  "require-dev": {
+    "phpunit/phpunit": "^11.3"
+  }
 }
