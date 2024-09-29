@@ -18,7 +18,6 @@ class ViaArray extends GetCount
         while (!empty($currentDirFiles) || !empty($newPaths)) {
             if (empty($currentDirFiles)) {
                 $currentDirFiles = $newPaths;
-                //Сборщик мусора сам почистит. Если его нет(отключен) - то надо использовать unset для очистки памяти
                 $newPaths = [];
             }
             $item = array_pop($currentDirFiles);
